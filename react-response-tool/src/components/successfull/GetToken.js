@@ -28,7 +28,8 @@ async function getToken (responseCode) {
             getUser(newToken);
         }
         else {
-            console.log("not a valid token")
+            const responseContainer = document.querySelector(".response-container");
+            responseContainer.innerHTML = `Not able to retrieve the token`;
         }
         
     } catch (error) {

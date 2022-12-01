@@ -1,5 +1,6 @@
 import {authUrl} from "../partials/Url";
 import getToken from "./GetToken";
+import {Link} from "react-router-dom";
 
 function Successfull() {
 
@@ -9,19 +10,18 @@ function Successfull() {
 
     if(responseCode) {
        getToken(responseCode)
-       const firstName = localStorage.getItem("firstName")
-       const lastName = localStorage.getItem("lastName")
        return (
-        <>
-        <p>{firstName} {lastName} has ben added</p>
-        </>
+        <div className="center home">
+        <div className="response-container"></div>
+        <Link to="/users" className="auth-btn">To Users</Link>
+        </div>
        )
     } else {
         return(
-            <>
-            <h1>Seems like there you havent authenticated</h1>
-            <a href={authUrl}>Authenticate</a>
-            </>
+            <div className="center home">
+            <h2>You havent Authenticated</h2>
+            <a href={authUrl} className="auth-btn">Authenticate</a>
+            </div>
         ) 
     }
     
