@@ -1,22 +1,26 @@
-import {Link} from "react-router-dom"
+import {authUrl} from "../partials/Url";
+import getToken from "./GetToken";
 
 function Successfull() {
 
     const search = window.location.search;
     const params = new URLSearchParams(search);
-    const foo = params.get('code');
+    const responseCode = params.get('code');
 
-    if(foo) {
-        return(
-            <>
-            <p>{foo}</p>
-            </>
-        )
+    if(responseCode) {
+       getToken(responseCode)
+       const firstName = localStorage.getItem("firstName")
+       const lastName = localStorage.getItem("lastName")
+       return (
+        <>
+        <p>{firstName} {lastName} has ben added</p>
+        </>
+       )
     } else {
         return(
             <>
-            <h1>Authenticate Yourself please</h1>
-            <Link to="/">Authenticate</Link>
+            <h1>Seems like there you havent authenticated</h1>
+            <a href={authUrl}>Authenticate</a>
             </>
         ) 
     }

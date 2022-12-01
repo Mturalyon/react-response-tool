@@ -1,6 +1,7 @@
 import Home from "./home/Home";
 import Users from "./users/Users";
 import Successfull from "./successfull/Successfull";
+import logo from "../img/logo.png"
 
 import {
     BrowserRouter,
@@ -14,6 +15,10 @@ function Navbar() {
         <BrowserRouter>
         <div>
           <nav>
+            <div className="flex-nav">
+            <Link to="/" className="logo">
+              <img src={logo} alt="Logo" className="logo"/>
+              </Link>
             <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -22,6 +27,7 @@ function Navbar() {
                 <Link to="/users">Users</Link>
               </li>
             </ul>
+            </div>
           </nav>
     
           <Routes>

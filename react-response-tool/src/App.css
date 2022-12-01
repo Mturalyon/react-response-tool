@@ -24,6 +24,7 @@ ul {
 
 nav {
     background-color: rgb(250, 250, 250);
+    padding: 0 3rem;
 }
 
 nav ul {
@@ -36,10 +37,22 @@ nav ul li a {
     display: inline-block;
     color: black;
     text-decoration: none;
+    transition: all 0.19s ease-in-out;
 }
 
 nav ul li a:hover {
     background-color: rgb(185, 185, 185);
+}
+
+.flex-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo {
+    max-width: 100px;
+    height: 40px;
 }
 
 /*FOOTER*/
