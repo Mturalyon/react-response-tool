@@ -1,5 +1,6 @@
 import {storageTokenUrl} from "../partials/Url";
 import {storagePassword, storageUsername} from "../partials/Credentials";
+import createUser from "./createUser";
 
 async function getStorageToken () {
 
@@ -21,7 +22,11 @@ async function getStorageToken () {
         })
         const json = await response.json();
         const newToken = json.token;
-        console.log(newToken);
+        
+        if(newToken) {
+            console.log(newToken)
+            createUser(newToken);
+        }
         
     } catch (error) {
         console.log(error)
