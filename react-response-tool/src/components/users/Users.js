@@ -1,8 +1,10 @@
 function Users() {
-    return(
+    const person = localStorage.getItem("Person");
+
+    return (
         <>
-        <h1>Users Page</h1>
-        <p>Another Paragraph</p>
+            <h1>Users Page</h1>
+            <p>{person}</p>
         </>
     )
 };

@@ -1,4 +1,4 @@
-import {userUrl} from "../partials/Url";
+import { userUrl } from "../partials/Url";
 
 async function getUser(myToken) {
     //We do a GET fetch request to the userUrl endpoint we created in the start, and store the result in "response" variable
@@ -18,6 +18,9 @@ async function getUser(myToken) {
         const responseContainer = document.querySelector(".response-container");
         responseContainer.innerHTML = `<h2>Success</h2>
         <h3>${json.given_name} ${json.family_name} has ben added</h3>`;
+        const fullName = json.given_name + " " + json.family_name;
+
+        localStorage.setItem("Person", fullName)
 
     } else {
         const responseContainer = document.querySelector(".response-container");
